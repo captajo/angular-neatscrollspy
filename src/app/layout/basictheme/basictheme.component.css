@@ -1,0 +1,11 @@
+.about {
+    padding: 10px; 
+    position: relative; 
+    bottom: 0;
+}
+
+@media (min-width: 500px) {
+    .about {
+        position: fixed;
+    }
+}

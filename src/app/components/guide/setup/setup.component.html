@@ -1,0 +1,169 @@
+<div class="row">
+    <div class="col-12 col-sm-8" [neatScrollSpy]="{ id: 'uni', selector: 'mains'}">
+        <h2 class="mains">Getting Started</h2>
+        <br>
+          NeatScrollspy can be used real quick and easy, with just two basics. 
+          <br><br>
+          <ol>
+            <li>
+              Step the point in your HTML you want to monitor scroll <br><br>
+              <pre class="code-block"> &#60;div [neatScrollSpy]="&#123; id: 'uniqueID', selector: 'mains'&#125;"&#62;
+       // Place code you want to spy on scroll here with assigned selector as class
+       // Example &#60;h2 class="mains"&#62;&#60;/h2&#62;
+   &#60;/div&#62;
+              </pre>
+            </li>
+            <li>Step where to display scroll options and responses <br><br>
+            <pre class="code-block"> &#60;neat-scrollspy-template [neatScrollspyOptions]="&#123; id: 'uniqueID' &#125;"&#62;&#60;/neat-scrollspy-template&#62;
+            </pre>
+          </li> 
+          </ol>
+        <br>
+        
+        <br>
+        <br>
+        <h3 class="mains">neatScrollSpy (directive)</h3>
+        <br>
+        <p>
+          This is the marker used to tell the extension to listen for elements within its span. The available options for this directive are as follows:
+          </p>
+          <table class="table table-striped table-bordered">
+            <tr>
+              <th>
+                Option
+              </th>
+              <th>
+                Description
+              </th>
+            </tr>
+            <tr>
+              <td>
+                id
+              </td>
+              <td>
+                This is a unique field used by the extension template to identify its marker. <br/> <strong>Note: This field must be unique </strong>
+              </td>
+            </tr>
+            <tr>
+                <td>
+                  selector
+                </td>
+                <td>
+                  This is a class field, used by the extension to know
+                </td>
+              </tr>
+          </table>
+        <br>
+        <br>
+        <h3 class="mains">neat-scrollspy-template (template)</h3>
+        <br>
+        <p>
+            This is the template for neat-scrollspy, which display the scroll options. Available directives within this template are:
+        </p>
+        <br>
+        <h4 class="mains">highlightOptions (directive)</h4>
+        <p>This option is used for editing the style of the neatScrollSpy extension. Example of usage:</p>
+        <pre class="code-block"> &#60;neat-scrollspy-template [highlightOptions]="&#123; type: 'bold' &#125;" [neatScrollspyOptions]="&#123; id: 'uniqueID' &#125;"&#62;&#60;/neat-scrollspy-template&#62;
+          </pre>
+        <br>
+        <table class="table table-striped table-bordered">
+            <tr>
+              <th>
+                Option
+              </th>
+              <th>
+                Description
+              </th>
+            </tr>
+            <tr>
+              <td>type</td>
+              <td>
+                Uses this option to indicate the type of highlight you want. Available options are: "bold" and "background-color". Default is "bold" <br>
+              </td>
+            </tr>
+            <tr>
+              <td>highlightColor</td>
+              <td>
+                This is the color taken by the currently displayed element within view. It is used to indicate which element is currently within view.
+                Default is "blue"
+              </td>
+            </tr>
+            <tr>
+              <td>defaultColor</td>
+              <td>
+                This is the default color used by all other elements outside the current view. Default is "black"
+              </td>
+            </tr>
+            <tr>
+              <td>highlightTextColor</td>
+              <td>
+                This is the text color used by all elements within the current view. Default is "white"
+              </td>
+            </tr>
+        </table>
+        <br><br>
+        <h4 class="mains">selectionOrder (directive)</h4>
+        <p>This option is used for editing the number of items highlighted on a page. Example of usage:</p>
+        <pre class="code-block"> &#60;neat-scrollspy-template [selectionOrder]="&#123; type: 'first' &#125;" [neatScrollspyOptions]="&#123; id: 'uniqueID' &#125;"&#62;&#60;/neat-scrollspy-template&#62;
+          </pre>
+        <br>
+        <br>
+        <table class="table table-striped table-bordered">
+            <tr>
+              <th>
+                Option
+              </th>
+              <th>
+                Description
+              </th>
+            </tr>
+            <tr>
+              <td>type</td>
+              <td>
+                This is used to indicate which element(s) within view is highlighted. Available options are; "first" and "all".
+                <ol>
+                  <li>"first" - This highlights the first element within view</li>
+                  <li>"all" - This highlights all element within view</li>
+                </ol>
+              </td>
+            </tr>
+        </table>
+        <br>
+        <h4 class="mains">alignOption (directive)</h4>
+        <p>This option is used for editing the alignment structure on the page. Example of usage:</p>
+        <pre class="code-block"> &#60;neat-scrollspy-template [alignOption]="&#123; type: 'straight' &#125;" [neatScrollspyOptions]="&#123; id: 'uniqueID' &#125;"&#62;&#60;/neat-scrollspy-template&#62;
+          </pre>
+        <br>
+        <br>
+        <table class="table table-striped table-bordered">
+            <tr>
+              <th>
+                Option
+              </th>
+              <th>
+                Description
+              </th>
+            </tr>
+            <tr>
+              <td>type</td>
+              <td>
+                This is set alignment for the scrollspy options. The Available options are: "straight", "auto", "manual"
+                <ol>
+                  <li>"straight" - This aligns all scrollspy options in a straight line (Default)</li>
+                  <li>"auto" - This aligns the scrollspy options in a tree manner, using regular [h1 - h5]</li>
+                  <li>"manual" - This aligns the scrollspy options as set by the users. Users can set indentation using 
+                    the "data-align" attribute.
+                  </li>
+                </ol>
+              </td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-sm-4">
+      <div style="position: fixed;">
+          <h5 class="text-muted">ON THIS PAGE</h5>
+          <neat-scrollspy-template [highlightOptions]="{ type: highlightType }" [neatScrollspyOptions]="{ id: 'uni' }" [alignOption]="{ type: 'auto' }"></neat-scrollspy-template>
+      </div>
+        
+    </div>
+  </div>

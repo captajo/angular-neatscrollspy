@@ -1,0 +1,39 @@
+
+<div class="row">
+  <div class="col-12 col-sm-8" [neatScrollSpy]="{ id: 'uni', selector: 'mains'}">
+      <h3 class="mains">Installation</h3>
+      <br>
+      <p>
+        Install NeatScrollspy from <strong>NPM repository</strong> using the following in your terminal
+      </p>
+      <br>
+      <pre class="code-block">
+        npm install ngx-neatscrollspy --save
+      </pre>
+      <br>
+      <br>
+      <h4 class="mains">Install in your project</h4>
+      <br>
+      <p>
+        Once installed from npm, you need to add NeatScrollspyModule to your project module, to begin to use it. Import <strong>NeatScrollspyModule</strong>
+        in your <strong>app.module.ts</strong> file (or any module, you wish to use it)
+      </p>
+      
+      <pre class="code-block">
+          import &#123; NeatScrollspyModule &#125; from 'ngx-neatscrollspy'; <br/>
+          ...... <br/>
+          @NgModule(&#123;
+            declarations: [ ... ],
+            imports: [
+              ....
+              NeatScrollspyModule,
+            ]
+          &#125;)
+      </pre>
+  </div>
+  <div class="col-sm-4">
+      <h5 class="text-muted">ON THIS PAGE</h5>
+      <neat-scrollspy-template
+      [neatScrollspyOptions]="{ id: 'uni' }" [alignOption]="{ type: 'auto' }"></neat-scrollspy-template>
+  </div>
+</div>
